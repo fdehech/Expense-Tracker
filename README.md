@@ -111,17 +111,3 @@ Budget Tracker/
 3. Open your browser and navigate to `http://localhost:5173` (or the port shown in your terminal).
 
 ---
-
-## 📝 License
-
-This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details (if applicable).
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](<your-repo-url>/issues).
-
----
-
-_Made with ❤️ for better financial management._
