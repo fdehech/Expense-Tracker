@@ -9,7 +9,7 @@ import { Wallet, Loader2 } from "lucide-react";
 import * as api from "./api/transactions";
 
 export default function App() {
-  const [netWorth, setNetWorth] = useState(5000);
+  const [netWorth, setNetWorth] = useState(0);
   const [expenses, setExpenses] = useState([]);
   const [editingExpense, setEditingExpense] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,7 +23,6 @@ export default function App() {
     try {
       setLoading(true);
       const data = await api.getTransactions();
-      // Map MongoDB _id to frontend id
       const mappedData = data.map(item => ({
         ...item,
         id: item._id
@@ -31,7 +30,7 @@ export default function App() {
       setExpenses(mappedData);
       setError(null);
     } catch (err) {
-      setError("Failed to fetch expenses. Is the server running?");
+      setError("Failed to fetch expenses, check Backend Server/MongoDB Server");
       console.error(err);
     } finally {
       setLoading(false);

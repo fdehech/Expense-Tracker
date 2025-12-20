@@ -16,7 +16,6 @@ const CATEGORY_COLORS = {
 };
 
 export function ExpenseChart({ expenses }) {
-  // Aggregate expenses by category
   const categoryData = expenses.reduce((acc, expense) => {
     const existing = acc.find(item => item.category === expense.category);
     if (existing) {
@@ -31,7 +30,6 @@ export function ExpenseChart({ expenses }) {
     return acc;
   }, []);
 
-  // Sort by value descending
   categoryData.sort((a, b) => b.value - a.value);
 
   const totalAmount = categoryData.reduce((sum, item) => sum + item.value, 0);
